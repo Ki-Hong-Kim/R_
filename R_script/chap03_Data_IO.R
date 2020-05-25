@@ -5,7 +5,8 @@
 
 # 1) 키보드 입력 
 # 숫자 입력
-x <- scan() 
+x <- scan() # space bar 로 구분을하고 입력을 마무리 하려면 엔터를 한번 더 치면된다 벡터형으로 저장된다
+# scan은 파일을 읽어 올 수도 있다
 x[3]
 sum(x)
 mean(x)
@@ -15,26 +16,28 @@ string <- scan(what = character())
 string
 
 # 2) 파일 읽기
-setwd("C:/ITWILL/2_Rwork/Part-I")
-getwd()
+setwd("C:/ITWILL/2_Rwork/Part-I") # 작업할 위치 선택
+getwd() # 현재 작업중인 위치 확인
 
 # 1. read.table() : 컬럼 구분(공백, 특수문자)
 # (1) text file 가져오기
 student <- read.table("student.txt") # 데이터에 제목이 따로 없으므로 header = F 기본값 적용
 student # V1 V2 ... 기본제목
-student1 <- read.table("student.txt", header = T)
+student1 <- read.table("student.txt", header = T) # 데이터 값을 열 이름으로 인식.. 조심!!
 student1
 
 # 제목이 있는 경우 , 구분자 : 특수문자
 student2 <- read.table("student2.txt", header =T, sep = ";")
 student2
 student2.1 <- read.table("student2.txt", header =T)
-student2.1 
+student2.1 # 원본 파일을 확인해서 구분자를 먼저 파악해야함!!
 
 # 결측치 처리하기, 제목이 있는경우
-student3 <- read.table("student3.txt", header = T, na.strings = '-')
+student3 <- read.table("student3.txt", header = T)
 student3
-mean(student3$'키', na.rm=T) # student3 에서 na.string = '-' 안하면 계산 아됨
+student3_1 <- read.table("student3.txt", header = T, na.strings = '-')
+student3_1
+mean(student3_1$'키', na.rm=T) # student3 에서 na.string = '-' 안하면 계산 아됨
 
 student3.0 <- read.table("student3.txt", header = T)
 str(student3.0) # 결측치인 '-' 때문에 키와 몸무게가 factor로 변함 => 확실히 결측치를 인식시켜야함

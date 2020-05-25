@@ -342,17 +342,17 @@ v <- unlist(x) # key 제거
 a <- list(1:5)
 b <- list(6:10)
 
-lapply(c(a,b), max) # list로 반환
-sapply(c(a,b), max) # vector로 반환
+lapply(c(a,b), max) # list로 반환   (a와 b의 값들 중 최대치를 리스트에 저장)
+sapply(c(a,b), max) # vector로 반환 (a와 b의 값들 중 최대치를 벡터로 저장)
 
 # 6. 서브셋 (subset) // 주로 data.frame이용
 # - 기존에 저장된 데이터 셋에서 특정 행 또는 열 선택 후 새로운 dataset 생성
 a <- 1:5
 b <- 6:10
-c <- letters[1:5]
+c <- letters[1:5] # letters는 기본 저장되어있는 dataset
 
-df <- data.frame(a, b, c)
-df[2,3] # 2행 3열은 b이고 해당 열에 어떠한 값들이 있는지 표현
+df <- data.frame(a, b, c) # 기본적으로 여러 데이터를 DF로 생성할떄 cbind와 같은 효과를 갖고있음
+df[2,3] # 2행 3열은 b이고 (해당 열에 어떠한 값들이 있는지 표현)
 df[3,]
 
 help(subset)
