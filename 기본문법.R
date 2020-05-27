@@ -49,11 +49,33 @@ str(df[2]) # df 형식을 그대로 갖고있음
 str(df[[2]]) # Factor w/ 3 levels "alex","roy","tom": 3 2 1
 
 
+###########################
+# 벡터, 리스트, 행렬 다루기
+###########################
+a <- seq(1, 6)  # [1] 1 2 3 4 5 6
+b <- seq(7, 9)  # [1] 7 8 9
 
+a + b
+# [1]  8 10 12 11 13 15
 
+cbind(a, b)
+#      a b
+# [1,] 1 7
+# [2,] 2 8
+# [3,] 3 9
+# [4,] 4 7
+# [5,] 5 8
+# [6,] 6 9
 
+# 벡터에 데이터 추가
+v <- 1:5
+newitems <- c('pants', 'coat')
+v <- c(v, newitems)
+v[length(v) + 1] <- newitems[1] # v의 저장공간을 1칸 늘리고 그곳에 새로운 값을 추가
 
-
+# 벡터에 데이터 삽입
+newvalues = 'shoes'
+append(newitems, newvalues, after = 1) # 
 
 
 
