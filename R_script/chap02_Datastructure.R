@@ -56,7 +56,7 @@ num2 <- seq(10, 1, by = -2)
 help(rep)
 rep(1:3, times=3)
 rep(1:3, each =3)
-rep(1:3, length.out=100) # rep 가 반복이라는 의미니 100개까지 반복
+rep(1:3, length.out=100) # rep 가 반복이라는 의미니 100개까지 반복 (times)
 
 # 색인 (index) : 저장 위치
 # 형식) object[n]
@@ -64,13 +64,13 @@ a  <- 1:50
 a        # a에 저장된 전체 원소 출력
 a[10]    # a에 저장된 원소 중 10번째 원소만 출력
 a[ 10 : 20 ] # a에 저장된 원소 중 10~20번째 까지 원소 출력
-a[ c( 10:20, 30:40) ] # a에 저장된 원소 중 10~20번째 그리고 30~40번째 까지 원소를 출력
+a[c(10:20, 30:40)] # a에 저장된 원소 중 10~20번째 그리고 30~40번째 까지 원소를 출력
 # a[10:15 , 10:30] error
 # 행이 10~15 열이 10~30 을 가져오라는 의미
 
 # 함수 이용
 length(a) # 50
-a[10:length(a)-5]
+a[10:length(a)-5] # 앞뒤를 다 -5 해버림
 a[10:(length(a)-5)]
 
 # 특정 원소 제외 (-)
@@ -78,7 +78,7 @@ a[-c(15,25,30:35)]
 
 # 조건식 (boolean)
 a[a>=10 & a<=30] # & and
-a[10<=a & 30>=a] # | or
+a[10<=a & 30>=a] 
 a[!10>=a] # ! not
 
 a[seq(2, length(a), by=2)] # 2부터 50 까지 2씩 늘어나는
@@ -95,7 +95,8 @@ mode(m1)
 class(m1)
 
 m2 <- matrix(data = c(1:9), nrow = 3, ncol = 3, byrow = T)
-m2 <- matrix(data = c(1:24), nrow = 4, byrow = T)
+m2 <- matrix(data = c(1:24), nrow = 4, byrow = T) # nrow를 설정하면 자동으로 ncol이 설정됨
+
 m2
 dim(m2)
 mode(m2)

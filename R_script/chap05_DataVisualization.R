@@ -5,7 +5,7 @@ chart_data <- c(305,450, 320, 460, 330, 480, 380, 520)
 names(chart_data) <- c("2016 1분기","2017 1분기","2016 2분기",
                        "2017 2분기","2016 3분기","2017 3분기","2016 4분기","2017 4분기") #당연하게 chart_data와 같은 수의 길이를 갖고있어야함 
 str(chart_data)
-
+mode(chart_data)
 chart_data
 max(chart_data) # 520
 
@@ -16,7 +16,7 @@ max(chart_data) # 520
 barplot(chart_data, # 막대차트로 작성할 데이터
         ylim = c(0, 600), # y축은 각 x축의 값들(max(chart_data)로 확인한 최대값으로 y축 범위 지정)
         main = "2016년 vs 2017년 판매현황", # 막대차트 제목 
-        col = rainbow(50)) # 막대차트 구분생상 설정 ( rainbow(n) 에서 n은 구분할 수 있는 색상 개수 )
+        col = rainbow(50)) # 막대차트 구분생상 설정 (rainbow(n) 에서 n은 구분할 수 있는 색상 개수)
 
 # - 가로 막대차트 (barplot에 horiz = T를 통해 가로 막대차트 생성)
 barplot(chart_data,
@@ -25,7 +25,7 @@ barplot(chart_data,
         col = rainbow(50),
         horiz = T) # horiz=T == 축변환 T
 
-par(mfrow = c(1,2)) # plot창에 출력구조 설정
+par(mfrow = c(1,2)) # plot창에 출력구조 설정 (1행에 2개 표를 입력할 수 있게 설정)
 VADeaths
 str(VADeaths) # 5행 4열
 
@@ -48,7 +48,7 @@ barplot(VADeaths,
         legend = rownames(VADeaths))
 
 # 그래프 범례 추가 
-legend(x=20, y=70, legend = row_names, fill = rainbow(50))
+legend(x=20, y=70, legend = row_names, fill = rainbow(50)) # 옵션 공부할것
 
 # (2) 점 차트
 dotchart(chart_data,
@@ -80,9 +80,9 @@ pie(table(iris$Species),
 
 # 1) 상자 그래프 시각화
 summary(VADeaths)
-quantile(VADeaths[,1])
+quantile(VADeaths[,1]) # 분위수
 
-boxplot(VADeaths)
+boxplot(VADeaths) # 지역(도심, 시골), 성별(남, 여)
 
 # 2) 히스토그램 시각화 (hist: 연속형 데이터 사용 /// barplot: 이산형데이터 사용)
 # -  대칭성 확인
@@ -93,7 +93,7 @@ hist(iris$Sepal.Width,
      col = "mistyrose",
      main = "iris 꽃받침 넓이 histgram",
      xlim = c(2,4.5), breaks = 10) # range(iris$Sepal.Width) 확인 후 xlim 범위 설정
-hist
+
 hist(iris$Sepal.Width,
      xlab="iris$Sepal.Width",
      col="mistyrose",
@@ -106,7 +106,7 @@ hist(iris$Sepal.Width,
 lines(density(iris$Sepal.Width), col="red")
 
 n <- 10000
-x <- rnorm(n, 0, 1)
+x <- rnorm(n, 0, 1) # n개의 난수가 평균은 0을 갖고 표준편차가 1인 분포
 hist(x, freq = F)
 
 lines(density(x), col = "red")
@@ -126,9 +126,10 @@ head(iris, 10)
 plot(iris$Sepal.Length, 
      iris$Petal.Length,
      col = iris$Species)
-legend(x = 7.4, y = 2, legend = unique(iris$Species), fill = unique(iris$Species))
+legend(x = 100, y = 2, legend = unique(iris$Species), fill = unique(iris$Species))
 # 레전드(레전드의 x는 왼면 y는 윗면을 기준으로 차트의 범위를 보고 작성)
 
+# 선의 옵션
 par(mfrow = c(2,3))
 price <- rnorm(50)
 plot(price, type="l") # 유형 : 실선 
