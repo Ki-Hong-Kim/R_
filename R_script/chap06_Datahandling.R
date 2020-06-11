@@ -1,10 +1,4 @@
 ##################################################################
-#
-##################################################################
-
-
-
-
 
 # chap06_Datahandling
 
@@ -20,14 +14,16 @@ head(iris)
 iris %>% head() %>% filter(Sepal.Length >= 5)
 #데이터 관측지 변화과정  150 > 6 > 3
 
+
 #install.packages("hflights")
 library(hflights)
 hf <- hflights
 str(hf)
 head(hf)
 
-# 2) tbl_df : 
+# 2) tbl_df : tibble dataframe 속성을 적용 tibble 과 dataframe 성격을 갖는다다
 hf_df <- tbl_df(hf)
+head(hf_df)
 str(hf_df)
 
 # 3) filter : 특정한 조건에 해당되는 행 출력
