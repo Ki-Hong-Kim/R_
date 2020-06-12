@@ -1,4 +1,5 @@
 # chap07_EDA_Preprocessing
+# Exploratory Data Analysis 탐색적 데이터 분석
 # insight를 도출하기 위한 준비 과정 EDA 수집한 데이터를 이해하고 전처리하고 
 
 # 1. 탐색적 데이터 조회
@@ -28,13 +29,13 @@ dataset # print(dataset)
 View(dataset) # 뷰어창 출력
 
 # 칼럼명 포함 간단 보기 
-head(dataset)
-head(dataset, 10) 
-tail(dataset) 
+head(dataset) # 앞에서 6개 까지 출력
+head(dataset, 10)  # 앞에서 10개 출력
+tail(dataset)  # 뒤에서 6개 출력
 
 # (3) 칼럼 조회 
 # 형식) dataframe$칼럼명   
-dataset$resident
+dataset$resident # dataset에서 resident 칼럼만 
 length(dataset$age) # data 수-300개 // 컬럼 아무거나 해도 상관없음
 
 # 형식) dataframe["칼럼명"] 
