@@ -27,6 +27,7 @@ df = data.frame(
   x2 = c(8,7,5,6,1,3,2),
   y = factor(c(1,1,1,1,0,0,0))
 )
+df
 
 # 2. svm 모델 생성 
 # 형식) svm(y ~ x, data, type, kernel) 
@@ -36,7 +37,7 @@ model_svm
 
 # default 속성 :  kernel="radial"
 # kernel : 비선형(non linear) 관계를 선형적(linear)으로 변환하는 역할 
-# kernel 종류 : linear, polynomial, radial, sigmoid
+# kernel 종류 : linear, polynomial, radial, sigmoid...
 
 # cost = 1 (기본값) 오분류 조절 속성( cost가 커지면 오분류율이 낮아짐 but 과적합이 증가 )
 # gamma = 0.5 : 결정경계 모양 조절 속성 (gamma가 커지면 결정경계가 작아지므로 오분류율이 낮아짐 )
