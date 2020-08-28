@@ -7,16 +7,16 @@
 # - vector 생성 함수 : c(), seq(), rep()
 
 # (1) c()
-x <- c(1,3,5,7)
-y <- c(3,5)
-length(x)
+x <- c(1, 3, 5, 7)
+y <- c(3, 5)
+length(x) # length는 x안에 몇개의 데이터가 있는지 확인하는 기본 함수이다.
 
 # 2) seq()
-x <- seq(1,10, by=2)
+x <- seq(1, 10, by=2)
 print(x) # 1로 시작하고 10으로 끝나는 2씩 중가하는 등차수열
 
 # 3) rep() 반복
-x <- rep(1:3,10,29) # 1:3 을 반복, 반복횟수, 반복횟수 상관없이 출력개수 제한
+x <- rep(1:3, 10, 29) # 1:3 을 반복, 반복횟수, 반복횟수 상관없이 출력개수 제한
 # [해석] 1~3 을 10번 반복 ==> 30개 생성 번 29번까지만 저장
 print(length(x))
 
@@ -38,14 +38,14 @@ print(num) # 모든 데이터가 문자형으로 저장됨
 
 # 벡터 원소 이름 지정 
 names <- c("홍길동", "이순신", "강감찬")
-age <- c(35,45,55)
+age <- c(35, 45, 55)
 names(age) <- names
-age # 열이름을 설정하는 방법
+age # 열이름을 처럼 보이는 속성을 설정하는 방법
+attributes(age)
 
-mode(age)
-mean(age) #45
-
-str(age)
+mode(age) # age에 저장된 값들의 type
+mean(age) # age의 평균 : 45
+str(age)  # str은 자료 구조와 변수의 특징을 보여주는 함수이다.
 
 # 2) seq() : 
 # seq( from , to , by , length.out , ...)
@@ -54,16 +54,19 @@ num2 <- seq(10, 1, by = -2)
 
 # 3) rep()
 help(rep)
-rep(1:3, times=3)
-rep(1:3, each =3)
+rep(1:3, times=3) # [1] 1 2 3 1 2 3 1 2 3
+rep(1:3, each =3) # [1] 1 1 1 2 2 2 3 3 3
 rep(1:3, length.out=100) # rep 가 반복이라는 의미니 100개까지 반복 (times)
+# 각 줄에 처음에 오는 [숫자]는 그 뒤에 오는 숫자가 몇번째로 오는건지 알려주는 것이다.
+# [1] 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1
+# [56] 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1
 
 # 색인 (index) : 저장 위치
 # 형식) object[n]
 a  <- 1:50
 a        # a에 저장된 전체 원소 출력
 a[10]    # a에 저장된 원소 중 10번째 원소만 출력
-a[ 10 : 20 ] # a에 저장된 원소 중 10~20번째 까지 원소 출력
+a[10 : 20 ] # a에 저장된 원소 중 10~20번째 까지 원소 출력
 a[c(10:20, 30:40)] # a에 저장된 원소 중 10~20번째 그리고 30~40번째 까지 원소를 출력
 # a[10:15 , 10:30] error
 # 행이 10~15 열이 10~30 을 가져오라는 의미
@@ -83,6 +86,7 @@ a[!10>=a] # ! not
 
 a[seq(2, length(a), by=2)] # 2부터 50 까지 2씩 늘어나는
 
+########################################################
 # 2. matrix 자료 구조 
 # - 동일한 자료형을 갖는 2차원 배열 구조
 # - 생성 함수 : matrix(), rbind(), cbind()
@@ -90,12 +94,15 @@ a[seq(2, length(a), by=2)] # 2부터 50 까지 2씩 늘어나는
 
 # (1) matrix
 m1 <- matrix(data= c(1:5))
-dim(m1)
-mode(m1)
-class(m1)
+dim(m1)   # 구조 확인 
+mode(m1)  # 입력된 데이터 타입 확인
+class(m1) # 자료 구조 형식 확인
 
 m2 <- matrix(data = c(1:9), nrow = 3, ncol = 3, byrow = T)
 m2 <- matrix(data = c(1:24), nrow = 4, byrow = T) # nrow를 설정하면 자동으로 ncol이 설정됨
+# nrow, ncol 은 row(행), col(열)의 개수를 정해주는 것
+# byrow = T 행을 기준으로 데이터를 채운다는 의미 (첫번째 행을 순서대로 채우고 그다음 두번째 행을 채운다)
+#         F 일경우 열을 기준으로 (기본값!!)
 
 m2
 dim(m2)
@@ -103,31 +110,37 @@ mode(m2)
 class(m2)
 
 # (2) rbind
-x <- 1:5
-y <- 6:10
+# 같은 길이의 데이터를 행을 기준으로 합함 
+x <- 1:3
+y <- 6:8
+z <- c("ㅇ", "ㅊ", "ㄷ")
 x
 y
-m3 <- rbind(x,y) # 행으로 합침
-print(m3)
+m3 <- rbind(x, y, z) # 행으로 합침
+print(m3) # x, y 행에 값들에 ""가 씌어짐 (z를 합해 문자열이 들어와서)
 dim(m3)
+mode(m3)  # character
+class(m3)
 
 # (3) cbind()
+# 같은 길이의 데이터를 열을 기준으로 합함
 m4 <- cbind(x,y)
 print(m4)
 dim(m4)
 
-# adsp
+# adsp 퀴즈
 xy <- rbind(x,y)
 xy
-# 문제 틀린것 1개
+# 문제 틀린것 확인
 # xy[1,]은 x와 같다
 # xy[,1]은 y와 같다
 # dim(xy)는 2*5 이다
 # class(xy)는 matrix이다.
+# mode(xy)는 matrix이다.
+
 
 # 색인(index) : matrix
 # 형식) object[row, column]
-
 m5 <- matrix(data = 1:9, nrow = 3 ,ncol = 3, byrow = T) 
 #[해석] 값은 1부터 9까지 있고 3행 3열로 행렬을 생성하는데 행을 우선으로 채운다
 # 특정 행 색인
@@ -165,20 +178,21 @@ t(x)
 
 # 처리 함수 : apply() 
 help(apply) # apply ( x, margin( 1(row) | 2(column) ), fun, ...)
+# apply(apply 적용할 데이터, 기준(행,열), 적용할 함수)  * 입력데이터는 array만 가능!! (다른 apply에는 다른 데이터도 입력 가능)
 apply(x, 1, sum)  #행 단위 합계
 apply(x, 2, mean) #열 단위 평균
 apply(x, 1, var)  #행 단위 분산
 apply(x, 1, sd)   #행 단위 표준편차
  
-
+#################################
 # 3. array 자료 구조 
 # - 동일한 자료형을 갖는 3차원 배열 구조
 # - 생성 함수 : array()
 
-
 # 색인 (index)
-arr = iris3
+arr = iris3 # iris3는 기본 저장되어있는 데이터셋입니다
 dim(arr) # 50행 4열 3면
+str(arr)
 arr[,,] # (row행, column열, side측면) 빈칸으로 두면 전체를 의미한다
 arr[,,1] #1면의 전체 행렬
 
@@ -195,8 +209,9 @@ iris3[,,2]
 iris3[,,3]
 iris[10:20,1:2,1]
 
+#################################
 # 4. data.frame
-# - 열 단위 서로다른 자료형을 갖는 2차원 배열 구조
+# - 열 기준 서로 다른 자료형을 갖는 2차원 배열 구조
 # - 생성 함수 : data.frame()
 # - 처리 함수 : apply() -- matrix, data.frame 둘다 사용 
 
@@ -205,16 +220,18 @@ no <- 1:3
 name <- c("홍길동", "이순신", "유관순")
 pay <- c(250, 350, 200)
 
-emp <- data.frame(no=no, name=name, pay=pay)
+# cbind와 같이 데이터를 합치는데 각 열에 이름을 설정해줄 수 있음 (따로 설정 안하면 입력되는 변수명을 열 이름으로 설정)
+emp <- data.frame(no, name, pay) # 합칠 데이터를 입력(각 데이터의 길이는 같아야함)
+emp <- data.frame(no=no, name=name, pay=pay) # 위와 같음
+emp <- data.frame(No=no, Name=name, Pay=pay) # 수정한 내용
 dim(emp)
 class(emp)
 mode(emp)
 
 # 자료 참조 : column 참조 ( $ ) or index 참조 ( [] )
 # 형식) object column
-
-mean(emp$pay)
-emp_row <- emp[c(1:3),]
+mean(emp$Pay)
+emp_row <- emp[c(1:2),]
 
 # 2) csv, text file, db table
 getwd() # 현재 작업공간 위치를 알려준다
@@ -263,6 +280,7 @@ diff <- (scores -avg)^2
 var <- sum(diff)/(length(scores)-1)
 sd <- sqrt(var)
 
+#################################
 # 5. List 자료구조
 # - key와 value 한쌍으로 자료가 저장된다
 # - key를 통해서 값(value)을 참조한다.
@@ -343,9 +361,15 @@ v <- unlist(x) # key 제거
 a <- list(1:5)
 b <- list(6:10)
 
-lapply(c(a,b), max) # list로 반환   (a와 b의 값들 중 최대치를 리스트에 저장)
-sapply(c(a,b), max) # vector로 반환 (a와 b의 값들 중 최대치를 벡터로 저장)
+lapply(c(a,b), max) # vector or list를 입력 받고 list로 반환   (a와 b의 값들 중 최대치를 리스트에 저장)
+                    # lapply의 결과에 unlist를 하면 vector로 반환됨!!
+sapply(c(a,b), max) # unlist 없이 vector로 반환 (a와 b의 값들 중 최대치를 벡터로 저장)
 
+vapply()
+dim(iris[,1])
+logical(length(iris[, 1]))
+
+###########################################
 # 6. 서브셋 (subset) // 주로 data.frame이용
 # - 기존에 저장된 데이터 셋에서 특정 행 또는 열 선택 후 새로운 dataset 생성
 a <- 1:5
@@ -388,20 +412,23 @@ iris_df <- subset(iris, Sepal.Length >= mean(Sepal.Length),
 mean(iris$Sepal.Length)
 str(iris_df)
 
+##############################
 # 7. 문자열 처리와 정규 표현식 
 # install.packages("stringr") # 문자열을 처리하는 함수
 library(stringr)
 
 string <- "h_ong35lee45kang55유관순25이사도시45BOOK5힇4힣"
-str_extract_all(string, "\\w{20}")
+str_extract_all(string, "\\w{20}") # \\w 는 문자인 것만 추출하는것 {20} 연속 20글자를 추출하라는 의미
+                                   #        문자(특수문자가 아닌 것)   참고!! _는 특수문자 같지만 예외로 둔다
 
 # 메타 문자 : 문자열을 추출하는 패턴지정(약속된) 특수 기호 // R에서도 사용하고 phython에서도 사용하고 공용임 
 
-# 1) str_extract_all
+# 1) str_extract_all   _all이 있다면 조건 충족하는 부분 모든 것을 추출 
+                            # 없다면 처음에 오는 것만 추출
 
 # 1) 반복관련 메타문자 : [ x ] : x가 1개인 패턴 , { n } : n개 연속되는 패턴
 str_extract_all(string, "[a-z]{3}") # string에서 영문소문자 3개가 연속되는 부분 추출
-str_extract_all(string, "[A-z,가-힇]{3,}") # {3, } 영문소문자, 한글 3자 이상 연속되는 부분 추출
+str_extract_all(string, "[A-z,가-힇]{3,}") # {3, } 영문대소문자 or 한글 3글자 이상 연속되는 부분 추출
 
 name <- str_extract_all(string, "[가-힣]{3,}")
 unlist(name)
@@ -479,20 +506,4 @@ str(name)
 paste(name, collapse = ",") # collapse 결합시 구분되는 구분점
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\

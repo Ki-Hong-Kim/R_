@@ -25,8 +25,8 @@ sessionInfo() # 세션 정보 제공 (error에 대한 질문할때 첨부하면 
 ##################################################
 # 2. 패키지 사용법 : package = function + data set
 # 1) 패키지 설치
-
 install.packages("stringr") # stringr 이 의존하는 패키지 : glue, magrittr, stringi, stringr
+installed.packages()
 dim(installed.packages())   # 이미 설치된 패키지가 몇개인지 확인 할 수 있다.
 # 패키지 설치시 입력한 패키지 그리고 해당 패키지가 연관성있는 의존성 패키지까지 설치된다.
 # 하지만 설치만 한다고 설치된 패키지를 사용할 수 있는게 아니다
@@ -209,6 +209,7 @@ age <- factor(c("30대", "40대", "20대", "999대"), c("20대", "30대", "40대
 print(age)
 # [1] 30대 20대 40대 <NA>
 #   Levels: 20대 < 30대 < 40대
+
 
 ########################
 # 4. 기본함수와 작업공간
