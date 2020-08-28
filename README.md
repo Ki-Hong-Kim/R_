@@ -1,4 +1,5 @@
 # R_
+R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다. 
 ### [chap01_basic](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap01_basic.R)
 <details>
     <summary>1. 패키지와 세션</summary>
