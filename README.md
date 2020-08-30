@@ -1,5 +1,6 @@
 # R_
 R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다. 
+
 ### [chap01_basic](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap01_basic.R)
 <details>
     <summary>1. 패키지와 세션</summary>
@@ -67,4 +68,18 @@ R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다.
 <details>
     <summary> 7. 패키지 stringr  </summary>
     <blockquote> > 문자열 처리와 정규 표현식 </blockquote>
+</details>
+
+### [chap03_Data_IO](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap03_Data_IO.R)
+<details>
+    <summary>1. 데이터 불러오기 </summary>
+    <blockquote> > 키보드 입력: scan() </blockquote>
+    <blockquote> > 파일 읽기: read.table(), read.csv() <br> &emsp;&emsp;&emsp; 옵션: header, na.strings, file.choose() </blockquote>
+    <blockquote> > xls/xlsx 읽기: 패키지 "xlsx" <br> &emsp;&emsp;&emsp;&emsp; 옵션: sheetindex, encoding</blockquote>
+    <blockquote> > 인터넷 파일 읽기 <br>  &emsp;간단한 기초 통계 확인 </blockquote>
+</details>
+<details>
+    <summary>2. 데이터 저장(출력)하기</summary>
+    <blockquote> > 화면 출력: cat(), print() </blockquote>
+    <blockquote> > 파일 저장: wrtie.table(), wrtie.csv(), write.xlse() </blockquote>
 </details>
