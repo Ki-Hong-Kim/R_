@@ -1,60 +1,6 @@
 # R_
 R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다. 
 
-### [chap04_1_Control](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap04_1_Control.R)
-<details>
-<summary> 0-1 산술 연산자 </summary>
-<div markdown="1"> 
-    
-|기호|예시|결과|
-|--|--|--|
-|+ (덧셈)|3 + 3| 6|
-|- (뺄셈)|3 - 3| 0|
-|* (곱셈)|3 * 3| 9|
-|/ (나눗셈)| 6 / 3|2|
-|%% (나머지)|5 %% 3|2|
-|^ (제곱)|3 ^ 3| 27|
-
-</div>
-</details>
-
-<details>
-<summary> 0-2 관계 연산자 </summary>
-
-<div markdown="1">
-
-|관계 연산자|기호|예시(결과)|
-|--|--|--|
-|동등 연산자|== (같다), != (다르다)| 1 == 1 (True) <br> 1 !=  1 (False)|
-|크기 비교 연산자|>, >=, <, <= | 5 > 1 (True) <br> 4 >= 4 (True) <br>  5 < 3 (False)|
-|논리 연산자|& (and), \| (or), ! (negative)| 4 >= 4 & 3 == 3 (True) <br> 4 >= 4 \| 3 != 3 (True)|
-
-<p> ** and 는 하나라도 거짓일 경우 False, or은 하나라도 참일 경우 True </p>
-
-</div>
-</details>
-
-<details><summary> 0-3 xor </summary><blockquote> xor 서로 상반된 값을 갖고 있다면 True <br> &emsp;&nbsp;&nbsp; 서로 같은 값을 갖고 있다면 False </blockquote></details>
-
-<details>
-<summary> 1. 조건문 : if문 </summary>
-<div markdown="1">
-    
-|조건문| 양식 |
-|--|--|
-|if else| if(조건문){조건 충족 함수} else {조건 미충족 함수}|
-|if else if else| if(조건1){조건1 충족} else if(조건2){조건2 충족} else {조건2 충족x} <br> **여러 조건을 사용해야하면 계속 if else를 추가할 수 있다.|
-|ifelse| ifelse(조건, 조건 충족, 조건 미충족)|
-</div>
-        
-</details>
-
-<details>
-    <summary> 2. 반복문 </summary>
-    <blockquote> > for 문 </blockquote>
-    <blockquote> > while 문 </blockquote>
-    <p> 두 반복의 차이점: for은 반복 횟수가 정해져있고 while은 조건 충족할때 까지 무한 반복한다. </p>
-</details>
 
 ### [chap01_basic](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap01_basic.R)
 <details>
@@ -137,4 +83,59 @@ R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다.
     <summary>2. 데이터 저장(출력)하기</summary>
     <blockquote> > 화면 출력: cat(), print() </blockquote>
     <blockquote> > 파일 저장: wrtie.table(), wrtie.csv(), write.xlse() </blockquote>
+</details>
+
+### [chap04_1_Control](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap04_1_Control.R)
+<details>
+<summary> 0-1 산술 연산자 </summary>
+<div markdown="1"> 
+    
+|기호|예시|결과|
+|--|--|--|
+|+ (덧셈)|3 + 3| 6|
+|- (뺄셈)|3 - 3| 0|
+|* (곱셈)|3 * 3| 9|
+|/ (나눗셈)| 6 / 3|2|
+|%% (나머지)|5 %% 3|2|
+|^ (제곱)|3 ^ 3| 27|
+
+</div>
+</details>
+
+<details>
+<summary> 0-2 관계 연산자 </summary>
+
+<div markdown="1">
+
+|관계 연산자|기호|예시(결과)|
+|--|--|--|
+|동등 연산자|== (같다), != (다르다)| 1 == 1 (True) <br> 1 !=  1 (False)|
+|크기 비교 연산자|>, >=, <, <= | 5 > 1 (True) <br> 4 >= 4 (True) <br>  5 < 3 (False)|
+|논리 연산자|& (and), \| (or), ! (negative)| 4 >= 4 & 3 == 3 (True) <br> 4 >= 4 \| 3 != 3 (True)|
+
+<p> ** and 는 하나라도 거짓일 경우 False, or은 하나라도 참일 경우 True </p>
+
+</div>
+</details>
+
+<details><summary> 0-3 xor </summary><blockquote> xor 서로 상반된 값을 갖고 있다면 True <br> &emsp;&nbsp;&nbsp; 서로 같은 값을 갖고 있다면 False </blockquote></details>
+
+<details>
+<summary> 1. 조건문 : if문 </summary>
+<div markdown="1">
+    
+|조건문| 양식 |
+|--|--|
+|if else| if(조건문){조건 충족 함수} else {조건 미충족 함수}|
+|if else if else| if(조건1){조건1 충족} else if(조건2){조건2 충족} else {조건2 충족x} <br> **여러 조건을 사용해야하면 계속 if else를 추가할 수 있다.|
+|ifelse| ifelse(조건, 조건 충족, 조건 미충족)|
+</div>
+        
+</details>
+
+<details>
+    <summary> 2. 반복문 </summary>
+    <blockquote> > for 문 </blockquote>
+    <blockquote> > while 문 </blockquote>
+    <p> 두 반복의 차이점: for은 반복 횟수가 정해져있고 while은 조건 충족할때 까지 무한 반복한다. </p>
 </details>
