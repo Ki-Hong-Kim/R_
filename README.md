@@ -1,31 +1,6 @@
 # R_
 R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다. 
 
-### [chap04_2_Function](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap04_2_Function.R)
-<details>
-    <summary>1. 사용자 정의 함수 </summary>
-    <blockquote> > 함수: 매개변수 </blockquote>
-    <blockquote> > 함수: return </blockquote>
-</details>
-
-<details>
-    <summary> 2. NA 처리 방법 </summary>
-    <blockquote> > NA값 제거: na.omit(x) </blockquote>
-    <blockquote> > 조건문을 활용한 다른 값으로 대체 </blockquote>
-</details>
-
-<details>
-    <summary> 3. 내장 함수 </summary>
-    <blockquote> > 기술 통계 함수 </blockquote>
-    <blockquote> > 난수 생성 함수 </blockquote>
-</details>
-
-<details>
-    <summary> 4. 홀드아웃 & 행렬 연산 </summary>
-    <blockquote> > 홀드 아웃 </blockquote>
-    <blockquote> > 행렬  </blockquote>
-</details>
-
 ### [chap01_basic](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap01_basic.R)
 <details>
     <summary>1. 패키지와 세션</summary>
@@ -162,4 +137,29 @@ R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다.
     <blockquote> > for 문 </blockquote>
     <blockquote> > while 문 </blockquote>
     <p> 두 반복의 차이점: for은 반복 횟수가 정해져있고 while은 조건 충족할때 까지 무한 반복한다. </p>
+</details>
+
+### [chap04_2_Function](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap04_2_Function.R)
+<details>
+    <summary>1. 사용자 정의 함수 </summary>
+    <blockquote> > 함수: 매개변수 </blockquote>
+    <blockquote> > 함수: return </blockquote>
+</details>
+
+<details>
+    <summary> 2. NA 처리 방법 </summary>
+    <blockquote> > NA값 제거: na.omit(x) </blockquote>
+    <blockquote> > 조건문을 활용한 다른 값으로 대체 </blockquote>
+</details>
+
+<details>
+    <summary> 3. 내장 함수 </summary>
+    <blockquote> > 기술 통계 함수 </blockquote>
+    <blockquote> > 난수 생성 함수 </blockquote>
+</details>
+
+<details>
+    <summary> 4. 홀드아웃 & 행렬 연산 </summary>
+    <blockquote> > 홀드 아웃 </blockquote>
+    <blockquote> > 행렬  </blockquote>
 </details>
