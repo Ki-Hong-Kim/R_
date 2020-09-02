@@ -1,6 +1,21 @@
 # R_
 R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다. 
 
+### [chap05_DataVisualization](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap05_DataVisualization.R)
+<details>
+    <summary> 1. 막대차트 생성 </summary>
+    
+    차트 생성시 필요한 변수 
+    > 축 범위 설정 : xlim, ylim
+    > 그래프 제목 : title
+    > 사용할 색 : col
+    > 막대 차트 방향(가로, 세로) : horize
+    > 그래프 범례 설정: legend
+    > 데이터 누적 출력 여부: beside
+    
+</details>
+
+
 ### [chap01_basic](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap01_basic.R)
 <details>
     <summary>1. 패키지와 세션</summary>
