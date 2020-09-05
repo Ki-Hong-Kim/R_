@@ -1,21 +1,6 @@
 # R_
 R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다. 
 
-### [chap05_DataVisualization](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap05_DataVisualization.R)
-<details>
-    <summary> 1. 막대차트 생성 </summary>
-    
-    차트 생성시 필요한 변수 
-    > 축 범위 설정 : xlim, ylim
-    > 그래프 제목 : title
-    > 사용할 색 : col
-    > 막대 차트 방향(가로, 세로) : horize
-    > 그래프 범례 설정: legend
-    > 데이터 누적 출력 여부: beside
-    
-</details>
-
-
 ### [chap01_basic](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap01_basic.R)
 <details>
     <summary>1. 패키지와 세션</summary>
@@ -177,4 +162,29 @@ R 기초부터 머신러닝 까지 복습차원으로 작성 중입니다.
     <summary> 4. 홀드아웃 & 행렬 연산 </summary>
     <blockquote> > 홀드 아웃 </blockquote>
     <blockquote> > 행렬  </blockquote>
+</details>
+
+### [chap05_DataVisualization](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap05_DataVisualization.R)
+<details>
+    <summary> 1. 막대차트 생성 </summary>
+    
+    차트 생성시 필요한 변수 
+    > 축 범위 설정 : xlim, ylim
+    > 그래프 제목 : title
+    > 사용할 색 : col
+    > 막대 차트 방향(가로, 세로) : horize
+    > 그래프 범례 설정: legend
+    > 데이터 누적 출력 여부: beside
+    
+</details>
+
+### [chap06_Datahandling](https://github.com/Ki-Hong-Kim/R_/blob/master/R_script/chap06_Datahandling.R)
+<details> 
+    <summary> 1. 패키지: dplyr  </summary>
+        1. 파이프 연산자 (%>%)
+        2. filter, select, arrange, mutate, summarise, group_by
+</details>
+<details> 
+    <summary> 2. 패키지: reshape2 </summary>
+    > dcast, melt, acaset
 </details>
